@@ -1,0 +1,652 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    text-align: center;
+    line-height: normal;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #141414;
+    font-family: 'Lato', sans-serif;
+}
+
+#menu {
+    font-size: 100%;
+    letter-spacing: 1px;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+#menu>li {
+    margin-bottom: 1em;
+}
+
+h4 {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Apply styles to the header */
+header {
+    background-color: #ffffff;
+    padding: 0 1rem;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    box-shadow: 0 2px 2px #4d4c4c;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    
+
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:#141414;
+    flex: 1;
+    margin-right: 10px;
+}
+
+a {
+
+    border-radius: 50%;
+    width: 5rem;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 16px;
+    font-family: Lato;
+}
+
+li {
+    display: inline;
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 0 1rem;
+    top: 100%
+}
+/*if i use ID for round*/
+#banner {
+    width: 100vw;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        height: 350px;
+        
+}
+/*if i use class for round*/
+.round-img {
+    max-width: 30%;
+        height: 20px;
+        height: fit-content;
+        display: block;
+        
+}
+
+/* Nav toggle */
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+}
+
+img {
+
+    max-width: 100%;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+figure {
+    margin-top: 40px;
+}
+
+
+#social {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+#social i {
+    font-size: 160%;
+    padding: 5%;
+    color: #3a3a3a;
+}
+
+#logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 200%;
+    margin: 0 0.5rem;
+    padding: 0;
+    white-space: nowrap;
+    margin-left: 50px;
+}
+
+.info-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(228, 228, 228, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+}
+
+.registration-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Just an example width, adjust as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+    backdrop-filter: blur(5px); /* Create a blurry effect on the background */
+    text-align: center; /* Center the content */
+}
+
+.registration-container h2 {
+    margin-bottom: 10px;
+}
+
+.registration-container hr {
+    width: 50%;
+    margin: 0 auto 20px auto;
+    border: 1px solid #ccc; /* Adjust the style of the line as needed */
+}
+
+.registration-container p {
+    margin-bottom: 20px;
+}
+
+.registration-container button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Adjust the background color as needed */
+    color: #fff; /* Adjust the text color as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registration-container button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Just an example width, adjust as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+    backdrop-filter: blur(5px); /* Create a blurry effect on the background */
+    text-align: center; /* Center the content */
+}
+
+.login-container h2 {
+    margin-bottom: 10px;
+}
+
+.login-container hr {
+    width: 50%;
+    margin: 0 auto 20px auto;
+    border: 1px solid #ccc; /* Adjust the style of the line as needed */
+}
+
+.login-container p {
+    margin-bottom: 20px;
+}
+
+.login-container button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Adjust the background color as needed */
+    color: #fff; /* Adjust the text color as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.transparent-box {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Change the comment box */
+.readonly-field {
+    resize: none; 
+    min-height: 20px; 
+    max-height: 40px; 
+}
+
+.info-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+body {
+    background-image: url("/static/images/cartoondiscs.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed
+
+}
+
+main {
+   flex: 1 0 auto;
+   margin-top: 50px;
+   display: flex;
+   flex-direction: column;
+}
+/* for booking success */
+.booking-successful {
+    text-align: center;
+    margin-top: 100px; 
+}
+
+.booking-successful h1 {
+    font-size: 4em; 
+    color: #ffffff; 
+}
+
+.container {
+    width: 100vw;
+
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.booking-info-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    opacity: 0.9;
+}
+
+.booking-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.action-buttons {
+    margin-top: 10px;
+}
+
+.action-buttons button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.content {
+    flex: 1;
+    margin-right: 1000px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.flex-container {
+    display: flex;
+    
+    justify-content: space-between;
+    text-align: center;
+
+}
+
+.image img {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+
+
+
+
+.centered-img {
+    text-align: center;
+
+}
+
+.centered-img img {
+    max-width: 100%;
+}
+
+img:last-child {
+    margin-bottom: 20px;
+}
+
+img:first-child {
+    margin-top: 20px;
+}
+
+
+
+section {
+    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+section h2, section p {
+    margin: 10px;
+
+}
+
+ #form-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+ }
+
+.text-input {
+    background: transparent;
+    color: #ffffff;
+    width: 100%;
+    height: 25px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    padding: 0 5px;
+}
+
+.sign-button {
+    margin-top: 20px;
+    border-radius: 2px;
+    padding: 15px 32px;
+    font-size: 100%;
+    background-color: #3a3a3a;
+    color: #f2f2f2;
+}
+
+.no-resize {
+    resize: none;
+    
+}
+
+/*footer*/
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+    
+}
+/*media for diffrent screen sizes*/
+@media (max-width: 576px) {
+
+    .content {
+        float: right;
+        width: 100%;
+    }
+
+   #photos {
+    columns: 2;
+    column-gap: 0;
+   }
+
+    #round-img {
+        max-width: 100%; 
+    }
+         
+    
+    footer {
+      position: relative;
+      box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .image {
+        text-align: right;
+    }
+    
+
+}
+
+@media (max-width: 768px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+        .content {
+            float: right;
+            width: 100%;
+        }
+
+    .flex-container {
+        flex-direction: column;
+    }
+    .content .image .text-box {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .text-box {
+        margin-right: 0;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+    }
+        .image {
+            text-align: right;
+        }
+
+    footer {
+        position: relative;
+        box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #round-img {
+        max-width: 80%;
+    }
+
+    #photos {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 10px;
+        
+
+    }
+
+    #photos img {
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 10px;
+    }
+
+    #photos img:last-child {
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    #photos img:first-child {
+        margin-top: 100px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .imgage-gallery img:last-child {
+        margin-bottom: 20px;
+    }
+
+   
+
+    
+    
+
+
+}
+
+@media (min-width: 768px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+        .content {
+            float: right;
+            width: 100%;
+        }
+
+    header {
+        position: fixed;
+        top: 0;
+    }
+        .image {
+            text-align: right;
+        }
+
+
+    #photos {
+        column-count: 4;
+        margin-top: 20px;
+        column-gap: 0;
+        
+    }
+
+    #photos img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    footer {
+        position: relative;
+        box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
+    }
+}
