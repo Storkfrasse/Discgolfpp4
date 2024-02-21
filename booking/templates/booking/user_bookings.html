@@ -9,8 +9,8 @@
                 <p>{{ booking.time_slot }}</p>
                 <p>{{ booking.comments }}</p>
                 <div class="action-buttons">
-                    <button onclick="location.href='{% url 'edit_booking' booking.id %}'">Change</button>
-                    <button onclick="location.href='{% url 'cancel_booking' booking.id %}'">Cancle</button>
+                    <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Change</a>
+                    <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger">Cancel</a>
                 </div>
             </div>
         {% endfor %}

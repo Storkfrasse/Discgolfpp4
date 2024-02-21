@@ -4,6 +4,7 @@ from django.contrib.auth import login, logout
 from .forms import BookingForm, RegistrationForm
 from .models import TimeSlot, Booking
 from django.contrib.auth import authenticate
+from django.shortcuts import get_object_or_404
 
 def main(request):
     return render(request, 'booking/main.html')
@@ -75,7 +76,7 @@ def cancel_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
     if request.method == 'POST':
         booking.delete()
-        return redirect('booking_success')
+        return redirect('user_bookings')
     return render(request, 'booking/cancel_booking.html', {'booking': booking})
 
 def user_bookings(request):

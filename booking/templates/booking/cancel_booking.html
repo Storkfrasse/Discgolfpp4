@@ -1,0 +1,15 @@
+{% extends "booking/header.html" %}
+{% block content %}
+
+<div class="center-container">
+    <div class="transparent-box">
+        <h1>Confirm Cancellation</h1>
+        <p>Are you sure you want to cancel your booking for {{ booking.time_slot }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-dark">Yes, Cancel</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
