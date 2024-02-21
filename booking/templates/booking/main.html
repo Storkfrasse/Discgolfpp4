@@ -1,11 +1,14 @@
 {% extends "booking/header.html" %}
 {% block content %}
 
-    <h1>Book Time</h1>
-    <form method="POST" action="{% url 'make_booking' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Book</button>
-    </form>
+    <div class="info-box">
+        <h2>Welcome to Disc Golf Booking</h2>
+        <p style="font-size: 18px;">Here you can book time slots to play disc golf at our beautiful course.</p>
+        <p style="font-size: 18px;">Our course offers a challenging yet enjoyable experience for players of all skill levels.</p>
+        <p style="font-size: 18px;">Our course is nestled in the heart of nature, surrounded by lush greenery and towering trees, providing a serene and picturesque setting for your disc golf experience.</p>
+        <p style="font-size: 18px;">With its diverse terrain and strategically placed baskets, our course offers a dynamic and engaging challenge for players of all skill levels. Whether you're a seasoned pro or new to the game, you'll find something to enjoy on our course.</p>
+        <p style="font-size: 18px;">Each hole presents its own unique obstacles and opportunities, requiring precision, strategy, and a touch of finesse to navigate successfully. From narrow fairways to tricky doglegs, our course will test your skills and keep you coming back for more.</p>
+        <p style="font-size: 18px;">So gather your friends, grab your discs, and come experience the thrill of disc golf at our course. We look forward to seeing you on the fairways!</p>
+    </div>
 
 {% endblock content %}
