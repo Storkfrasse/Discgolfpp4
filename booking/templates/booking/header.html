@@ -10,11 +10,13 @@
 <body>
     <header>
         <a href="/" id="logo" class="header-content">Discgolf Booking</a>
-        <nav>
-            <ul id="menu">
-                <li><a href="{% url 'register' %}">Register</a></li>
+        <ul id="menu">
+            <li><a href="{% url 'register' %}">Register</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'user_logout' %}">Log out</a></li>
+            {% else %}
                 <li><a href="{% url 'login' %}">Log in</a></li>
-            </ul>
+            {% endif %}
         </nav>
     </header>
 

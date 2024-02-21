@@ -4,6 +4,7 @@ from django.contrib.auth import login, logout
 from .forms import BookingForm
 from .models import TimeSlot, Booking
 from .forms import RegistrationForm
+from django.contrib.auth import authenticate, login
 
 def main(request):
     return render(request, 'booking/main.html')
@@ -31,7 +32,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('main')
+            return redirect('make_booking')
     else:
         form = RegistrationForm()
     return render(request, 'booking/register.html', {'form': form})

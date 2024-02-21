@@ -238,52 +238,45 @@ figure {
 }
 
 .login-container {
-    width: 50%;
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Just an example width, adjust as needed */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+    backdrop-filter: blur(5px); /* Create a blurry effect on the background */
+    text-align: center; /* Center the content */
 }
 
 .login-container h2 {
-    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-container hr {
+    width: 50%;
+    margin: 0 auto 20px auto;
+    border: 1px solid #ccc; /* Adjust the style of the line as needed */
+}
+
+.login-container p {
     margin-bottom: 20px;
-}
-
-.login-container form {
-    text-align: center;
-}
-
-.login-container .form-group {
-    margin-bottom: 15px;
-}
-
-.login-container label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.login-container input[type="text"],
-.login-container input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
 }
 
 .login-container button {
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #007bff; /* Adjust the background color as needed */
+    color: #fff; /* Adjust the text color as needed */
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .login-container button:hover {
-    background-color: #45a049;
+    background-color: #0056b3; /* Change the background color on hover */
 }
 
 .info-box h2 {
