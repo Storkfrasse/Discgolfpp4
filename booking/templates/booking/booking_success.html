@@ -1,7 +1,10 @@
 {% extends "booking/header.html" %}
+
 {% block content %}
-
-    <h1>Booking Successful</h1>
-    <p>Your booking has been successfully made.</p>
-
+    <div class="container">
+        <div class="booking-successful">
+            <h1>Booking Successful</h1>
+            <p>Click <a href="{% url 'user_bookings' %}">here</a> to view and manage your bookings.</p>
+        </div>
+    </div>
 {% endblock content %}

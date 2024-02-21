@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
-from .forms import BookingForm
+from .forms import BookingForm, RegistrationForm
 from .models import TimeSlot, Booking
-from .forms import RegistrationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
 
 def main(request):
     return render(request, 'booking/main.html')
@@ -78,3 +77,7 @@ def cancel_booking(request, booking_id):
         booking.delete()
         return redirect('booking_success')
     return render(request, 'booking/cancel_booking.html', {'booking': booking})
+
+def user_bookings(request):
+    user_bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'booking/user_bookings.html', {'user_bookings': user_bookings})
