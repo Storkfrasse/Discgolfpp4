@@ -13,4 +13,8 @@ class RegistrationForm(UserCreationForm):
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['user', 'time_slot', 'comments']
+        fields = ['time_slot', 'comments']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['comments'].widget.attrs['class'] = 'readonly-field'

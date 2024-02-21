@@ -15,7 +15,8 @@ def show_time_slots(request):
 
 def make_booking(request):
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        booking = Booking(booked_by=request.user)
+        form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
             return redirect('booking_success')
@@ -46,7 +47,7 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('main')
+                return redirect('make_booking')
             else:
                 # Handle invalid credentials
                 # You might want to display an error message
