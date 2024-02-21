@@ -1,12 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discgolf Booking System</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header>
-        <h1>Discgolf Booking System</h1>
-        <!-- Place other parts for header here -->
+        <a href="/" id="logo" class="header-content">Discgolf Booking</a>
+        <nav>
+            <ul id="menu">
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Log in</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <main> 
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="footer-container">
+            <ul id="social">
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                        aria-label="Visit our Facebook page (opens in a new tab)">
+                        <i class="fa-brands fa-facebook"></i></a>
+                </li>
+    
+                <li>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                        aria-label="Visit our Instagram page (opens in a new tab)">
+                        <i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="mailto:micke.minti@gmail.com" aria-label="Contact me via email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!---font awesome-->
+    <script src="https://kit.fontawesome.com/f1f83dc3cf.js" crossorigin="anonymous"></script>
