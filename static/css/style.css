@@ -7,6 +7,14 @@
     box-sizing: border-box;
 }
 
+.btn {
+    text-align: center;
+    line-height: normal;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 body {
     min-height: 100vh;
     display: flex;
