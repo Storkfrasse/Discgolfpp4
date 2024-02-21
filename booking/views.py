@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from .forms import BookingForm
 from .models import TimeSlot, Booking
+from .forms import RegistrationForm
 
 def main(request):
     return render(request, 'booking/main.html')
@@ -26,14 +27,14 @@ def booking_success(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect('main')
     else:
-        form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+        form = RegistrationForm()
+    return render(request, 'booking/register.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -44,7 +45,7 @@ def user_login(request):
             return redirect('main')
     else:
         form = AuthenticationForm()
-    return render(request, 'registration/login.html', {'form': form})
+    return render(request, 'booking/make_booking.html', {'form': form})
 
 def user_logout(request):
     logout(request)

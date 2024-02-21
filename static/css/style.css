@@ -176,6 +176,67 @@ figure {
     max-width: 80%;
 }
 
+.registration-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Just an example width, adjust as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+    backdrop-filter: blur(5px); /* Create a blurry effect on the background */
+    text-align: center; /* Center the content */
+}
+
+.registration-container h2 {
+    margin-bottom: 10px;
+}
+
+.registration-container hr {
+    width: 50%;
+    margin: 0 auto 20px auto;
+    border: 1px solid #ccc; /* Adjust the style of the line as needed */
+}
+
+.registration-container p {
+    margin-bottom: 20px;
+}
+
+.registration-container button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Adjust the background color as needed */
+    color: #fff; /* Adjust the text color as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registration-container button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
 .info-box h2 {
     font-size: 24px;
     margin-bottom: 10px;
