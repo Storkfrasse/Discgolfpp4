@@ -15,10 +15,11 @@ def show_time_slots(request):
 
 def make_booking(request):
     if request.method == 'POST':
-        booking = Booking(booked_by=request.user)
-        form = BookingForm(request.POST, instance=booking)
+        form = BookingForm(request.POST)
         if form.is_valid():
-            form.save()
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.save()
             return redirect('booking_success')
     else:
         form = BookingForm()
