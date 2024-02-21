@@ -112,14 +112,6 @@ nav {
         display: block;
         
 }
-/* for a round img*/
-#round-img {
-    max-width: 30%;
-
-    border-radius: 50%;
-    margin-top: 20px;
-
-}
 
 /* Nav toggle */
 #nav-toggle:checked~nav {
@@ -274,54 +266,12 @@ section h2, section p {
 
 }
 
-/*Gallery*/
-.image-gallery {
-    display: grid;
-    grid-gap: 20px;
-
-}
-
-#photos-container {
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-#photos img {
-    max-width: 100%;
-    height: auto;
-    
-    
-}
-/*contact form*/
-#signup {
-    background-image: url(../images/disc\ cartoon.webp) ;
-    background-size: cover;
-    background-position: 75%;
-    padding: 20px 10% 0 10%;
-    flex-grow: 1;
-    
-    margin-top: 50px;
-}
-
-#signup-form {
-    color: #f2f2f2;
-    background-color: #141414;
-    padding: 30px;
-    
-}
  #form-container {
      display: flex;
      justify-content: center;
      align-items: center;
      
  }
-
-
-
-#signup-form>h2 {
-    color: #fafafa;
-    margin-bottom: 20px;
-}
 
 .text-input {
     background: transparent;
