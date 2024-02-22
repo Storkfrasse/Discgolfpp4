@@ -4,16 +4,24 @@
 <div class="center-container">
     <div class="booking-info-box">
         <h2>Booked times</h2>
-        {% for booking in user_bookings %}
-            <div class="booking-item">
-                <p>{{ booking.time_slot }}</p>
-                <p>{{ booking.comments }}</p>
-                <div class="action-buttons">
-                    <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Change</a>
-                    <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger">Cancel</a>
+        {% if user_bookings %}
+            {% for booking in user_bookings %}
+                <div class="booking-item">
+                    <p>{{ booking.time_slot }}</p>
+                    <p>{{ booking.comments }}</p>
+                    <div class="action-buttons">
+                        <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Change</a>
+                        <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger">Cancel</a>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            <p>You have no booked times.</p>
+        {% endif %}
+        
+        <div class="make-booking-button">
+            <a href="{% url 'make_booking' %}" class="btn btn-success">Make a Booking</a>
+        </div>
     </div>
 </div>
 
