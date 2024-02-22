@@ -614,11 +614,28 @@ header, footer {
     #social i {
         font-size: 1.5rem;
     }
+
+    .info-box {
+        width: 90%; 
+        max-height: 50%; 
+        top: 50%;
+    }
 }
 
 
 @media only screen and (max-width: 768px) {
     .info-box {
-        max-width: 90%;
+        width: 90%; 
+        max-height: 50%; 
+        top: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 1300px) {
+    .info-box {
+        width: 90%;
+        max-height: 50%;
+        top: 50%;
     }
 }
