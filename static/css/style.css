@@ -103,23 +103,6 @@ nav {
     padding: 0 1rem;
     top: 100%
 }
-/*if i use ID for round*/
-#banner {
-    width: 100vw;
-        height: auto;
-        object-fit: cover;
-        display: block;
-        height: 350px;
-        
-}
-/*if i use class for round*/
-.round-img {
-    max-width: 30%;
-        height: 20px;
-        height: fit-content;
-        display: block;
-        
-}
 
 /* Nav toggle */
 #nav-toggle:checked~nav {
@@ -421,8 +404,6 @@ main {
 }
 
 
-
-
 .centered-img {
     text-align: center;
 
@@ -439,8 +420,6 @@ img:last-child {
 img:first-child {
     margin-top: 20px;
 }
-
-
 
 section {
     
@@ -488,7 +467,11 @@ section h2, section p {
 }
 
 /*footer*/
-footer {
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: #f2f2f2;
     padding: 20px;
     border: 1px solid #ccc;
@@ -498,6 +481,8 @@ footer {
     margin-top: auto;
     
 }
+
+
 /*media for diffrent screen sizes*/
 @media (max-width: 576px) {
 
