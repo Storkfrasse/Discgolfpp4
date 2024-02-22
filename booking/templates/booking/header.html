@@ -10,17 +10,22 @@
 
 </head>
 <body>
-    <header>
+    <header id="header" class="d-flex justify-content-between align-items-center py-3 px-4">
         <a href="/" id="logo" class="header-content">Discgolf Booking</a>
-        <ul id="menu">
-            <li><a href="{% url 'register' %}">Register</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'user_logout' %}">Log out</a></li>
-                <li><a href="{% url 'user_bookings' %}">Bookings</a></li>
-            {% else %}
-                <li><a href="{% url 'login' %}">Log in</a></li>
-            {% endif %}
-        </nav>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                {% if user.is_authenticated %}
+                    <li><a class="dropdown-item" href="{% url 'user_logout' %}">Log out</a></li>
+                    <li><a class="dropdown-item" href="{% url 'user_bookings' %}">Bookings</a></li>
+                {% else %}
+                    <li><a class="dropdown-item" href="{% url 'login' %}">Log in</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </header>
 
     <main> 
@@ -31,15 +36,14 @@
         <div class="footer-container">
             <ul id="social">
                 <li>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                        aria-label="Visit our Facebook page (opens in a new tab)">
-                        <i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
                 </li>
-    
                 <li>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"
-                        aria-label="Visit our Instagram page (opens in a new tab)">
-                        <i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
                 </li>
                 <li>
                     <a href="mailto:micke.minti@gmail.com" aria-label="Contact me via email">
@@ -53,3 +57,5 @@
     <script src="https://kit.fontawesome.com/f1f83dc3cf.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
