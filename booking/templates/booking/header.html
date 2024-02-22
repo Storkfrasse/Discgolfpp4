@@ -16,7 +16,7 @@
             <li><a href="{% url 'register' %}">Register</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'user_logout' %}">Log out</a></li>
-                <li><a href="{% url 'user_bookings' %}">My Bookings</a></li>
+                <li><a href="{% url 'user_bookings' %}">Bookings</a></li>
             {% else %}
                 <li><a href="{% url 'login' %}">Log in</a></li>
             {% endif %}

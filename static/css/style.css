@@ -57,6 +57,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    top: 0;
     
 
 }
@@ -156,7 +157,7 @@ figure {
 }
 
 .info-box {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -165,6 +166,13 @@ figure {
     border-radius: 10px;
     text-align: center;
     max-width: 80%;
+    overflow-y: auto;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.info-box p {
+    font-size: 18px;
 }
 
 .registration-container {
@@ -482,156 +490,85 @@ section h2, section p {
     
 }
 
+header, footer {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
 
 /*media for diffrent screen sizes*/
-@media (max-width: 576px) {
-
-    .content {
-        float: right;
-        width: 100%;
+@media only screen and (max-width: 375px) {
+    .info-box {
+        width: 90%;
+        max-width: none;
+        padding: 10px;
+        font-size: 14px;
     }
-
-   #photos {
-    columns: 2;
-    column-gap: 0;
-   }
-
-    #round-img {
-        max-width: 100%; 
-    }
-         
-    
-    footer {
-      position: relative;
-      box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
-    }
-    
-    .image {
-        text-align: right;
-    }
-    
-
 }
 
-@media (max-width: 768px) {
-    section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-        .content {
-            float: right;
-            width: 100%;
-        }
+@media only screen and (max-width: 576px) {
 
-    .flex-container {
-        flex-direction: column;
-    }
-    .content .image .text-box {
-        flex-basis: 100%;
-        max-width: 100%;
+    .info-box {
+        width: 90%; 
+        max-height: 50%; 
+        top: 50%;
     }
 
-    .text-box {
-        margin-right: 0;
+    .info-box h2 {
+        font-size: 24px; 
     }
-
-    header {
-        position: fixed;
-        top: 0;
+    .info-box p {
+        font-size: 16px; 
     }
-        .image {
-            text-align: right;
-        }
-
-    footer {
-        position: relative;
-        box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    #round-img {
-        max-width: 80%;
-    }
-
-    #photos {
-        max-width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        padding: 10px;
-        
-
-    }
-
-    #photos img {
-        max-width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 10px;
-    }
-
-    #photos img:last-child {
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
-    }
-
-    #photos img:first-child {
-        margin-top: 100px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .imgage-gallery img:last-child {
-        margin-bottom: 20px;
-    }
-
-   
-
-    
-    
-
-
 }
 
-@media (min-width: 768px) {
-    section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-        .content {
-            float: right;
-            width: 100%;
-        }
-
-    header {
-        position: fixed;
-        top: 0;
-    }
-        .image {
-            text-align: right;
-        }
-
-
-    #photos {
-        column-count: 4;
-        margin-top: 20px;
-        column-gap: 0;
-        
+    .transparent-box {
+        padding: 20px; 
     }
 
-    #photos img {
-        max-width: 100%;
-        height: auto;
+    .transparent-box h1 {
+        font-size: 1.5rem; 
     }
 
-    footer {
-        position: relative;
-        box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
+    .transparent-box p {
+        font-size: 0.9rem; 
+    }
+    
+    #logo {
+        font-size: 1.5rem;
+    }
+
+    
+    #menu li a {
+        font-size: 0.8rem;
+    }
+
+    
+    #social i {
+        font-size: 1.2rem;
+    }
+
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    
+    #logo {
+        font-size: 2rem;
+    }
+
+    
+    #menu li a {
+        font-size: 1rem;
+    }
+
+    
+    #social i {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .info-box {
+        max-width: 90%;
     }
 }
