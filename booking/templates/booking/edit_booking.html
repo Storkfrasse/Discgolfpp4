@@ -4,7 +4,7 @@
 <div class="center-container">
     <div class="transparent-box">
         <h1>Edit Booking</h1>
-        <form method="POST">
+        <form method="POST" action="{% url 'edit_booking' booking.id %}">
             {% csrf_token %}
             <div class="form-group">
                 <label for="current_time_slot">Current Time Slot:</label>
