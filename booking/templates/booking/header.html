@@ -17,12 +17,12 @@
                 Menu
             </button>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
                 {% if user.is_authenticated %}
                     <li><a class="dropdown-item" href="{% url 'user_logout' %}">Log out</a></li>
                     <li><a class="dropdown-item" href="{% url 'user_bookings' %}">Bookings</a></li>
                 {% else %}
                     <li><a class="dropdown-item" href="{% url 'login' %}">Log in</a></li>
+                    <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -53,6 +53,27 @@
             </ul>
         </div>
     </footer>
+
+<!-- JavaScript code for automatic logout -->
+<script>
+    // Set the timeout duration (5 minutes in milliseconds)
+    var timeoutDuration = 5 * 60 * 1000; // 5 minutes
+
+    // Set the logout function
+    var logout = function() {
+        window.location.href = "{% url 'user_logout' %}";
+    };
+
+    // Set the timeout
+    var timeout = setTimeout(logout, timeoutDuration);
+
+    // Reset the timeout on user interaction
+    document.addEventListener("mousemove", function() {
+        clearTimeout(timeout);
+        timeout = setTimeout(logout, timeoutDuration);
+    });
+</script>
+
     <!---font awesome-->
     <script src="https://kit.fontawesome.com/f1f83dc3cf.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
