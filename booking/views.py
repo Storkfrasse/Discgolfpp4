@@ -61,20 +61,6 @@ def user_logout(request):
     logout(request)
     return redirect('main')
 
-def edit_booking(request, booking_id):
-    booking = get_object_or_404(Booking, pk=booking_id)
-    user_time_slots = TimeSlot.objects.exclude(booking=booking) 
-
-    if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            return redirect('booking_success')
-    else:
-        form = BookingForm(instance=booking)
-
-    return render(request, 'booking/edit_booking.html', {'form': form, 'booking': booking, 'available_time_slots': user_time_slots})
-
 def cancel_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
     if request.method == 'POST':
