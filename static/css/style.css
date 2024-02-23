@@ -290,6 +290,8 @@ figure {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    position: fixed;
+    top: 500px;
 }
 
 /* Change the comment box */
@@ -345,6 +347,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
 }
 
 .booking-info-box {
