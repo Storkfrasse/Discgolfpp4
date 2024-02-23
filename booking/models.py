@@ -12,7 +12,7 @@ class UserProfile(models.Model):
 class TimeSlot(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    max_bookings = models.IntegerField(default=2)  # Max bookings for timeslot
+    max_bookings = models.IntegerField(default=1)  # Max bookings for timeslot
 
     def available_slots(self):
         """
@@ -21,6 +21,9 @@ class TimeSlot(models.Model):
         booked_slots = self.booking_set.count()
         available_slots = self.max_bookings - booked_slots
         return available_slots
+
+    def __str__(self):
+            return f"{self.start_time.strftime('%Y-%m-%d %H:%M')} to {self.end_time.strftime('%Y-%m-%d %H:%M')}"
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

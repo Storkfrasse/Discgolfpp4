@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Booking
+from .models import Booking, TimeSlot
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -17,4 +17,7 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['comments'].widget.attrs['class'] = 'readonly-field'
+        
+        available_time_slots = TimeSlot.objects.filter(booking__isnull=True)
+        
+        self.fields['time_slot'].queryset = available_time_slots
