@@ -322,6 +322,7 @@ main {
    margin-top: 50px;
    display: flex;
    flex-direction: column;
+   padding-top: 50px;
 }
 /* for booking success */
 .booking-successful {
@@ -348,15 +349,14 @@ main {
 
 .booking-info-box {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 12%;
+    max-width: 80%;
+    margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    max-width: 80%;
-    opacity: 0.9;
+    overflow-y: auto; /
 }
 
 .booking-item {
@@ -532,7 +532,7 @@ header, footer {
 
 /*media for diffrent screen sizes*/
 @media only screen and (max-width: 375px) {
-    .info-box {
+    .info-box, .booking-info-box {
         width: 90%;
         max-width: none;
         padding: 10px;
@@ -542,10 +542,16 @@ header, footer {
 
 @media only screen and (max-width: 576px) {
 
-    .info-box {
+    .info-box{
         width: 90%; 
         max-height: 50%; 
         top: 50%;
+    }
+
+    .booking-info-box {
+        width: 90%;
+        max-height: 50%;
+        top: 20%;
     }
 
     .info-box h2 {
@@ -620,14 +626,26 @@ header, footer {
         max-height: 50%; 
         top: 50%;
     }
+
+    .booking-info-box {
+        width: 90%;
+        max-height: 50%;
+        top: 20%;
+    }
 }
 
 
 @media only screen and (max-width: 768px) {
-    .info-box {
+    .info-box{
         width: 90%; 
         max-height: 50%; 
         top: 50%;
+    }
+
+    .booking-info-box {
+        width: 90%;
+        max-height: 50%;
+        top: 20%;
     }
 
 }
@@ -637,5 +655,11 @@ header, footer {
         width: 90%;
         max-height: 50%;
         top: 50%;
+    }
+
+    .booking-info-box {
+        width: 90%;
+        max-height: 50%;
+        top: 20%;
     }
 }
