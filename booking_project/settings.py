@@ -134,3 +134,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.gitpod.io/",
     "https://*.herokuapp.com/"
 ]
+
+# Logout user after 5min
+SESSION_COOKIE_AGE = 300
