@@ -8,6 +8,7 @@ from django.views.generic.edit import UpdateView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.http import Http404
+from django.db.models import Q
 
 
 class BookingUpdateView(UpdateView):
@@ -38,6 +39,15 @@ def show_time_slots(request):
 
 @login_required
 def make_booking(request):
+    
+    user_bookings = Booking.objects.filter(user=request.user).values_list('time_slot', flat=True)
+
+    other_users_bookings = Booking.objects.exclude(user=request.user).values_list('time_slot', flat=True)
+
+    booked_time_slots = list(user_bookings) + list(other_users_bookings)
+
+    available_time_slots = TimeSlot.objects.filter(available=True).exclude(id__in=booked_time_slots)
+
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -47,7 +57,8 @@ def make_booking(request):
             return redirect('booking_success')
     else:
         form = BookingForm()
-    return render(request, 'booking/make_booking.html', {'form': form, 'time_slots': TimeSlot.objects.all()})
+
+    return render(request, 'booking/make_booking.html', {'form': form, 'time_slots': available_time_slots})
 
 def booking_success(request):
     return render(request, 'booking/booking_success.html')

@@ -15,6 +15,11 @@ class TimeSlot(models.Model):
     max_bookings = models.IntegerField(default=1)  # Max bookings for timeslot
     available = models.BooleanField(default=True)
 
+    @classmethod
+    def available_time_slots(cls, user):
+        user_bookings = Booking.objects.filter(user=user).values_list('time_slot', flat=True)
+        return cls.objects.filter(available=True).exclude(id__in=user_bookings)
+
     def available_slots(self):
         """
         Spots for timeslot
@@ -24,7 +29,7 @@ class TimeSlot(models.Model):
         return available_slots
 
     def __str__(self):
-            return f"{self.start_time.strftime('%Y-%m-%d %H:%M')} to {self.end_time.strftime('%Y-%m-%d %H:%M')}"
+        return f"{self.start_time.strftime('%Y-%m-%d %H:%M')} to {self.end_time.strftime('%Y-%m-%d %H:%M')}"
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
