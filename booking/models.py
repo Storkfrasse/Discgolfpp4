@@ -13,6 +13,7 @@ class TimeSlot(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     max_bookings = models.IntegerField(default=1)  # Max bookings for timeslot
+    available = models.BooleanField(default=True)
 
     def available_slots(self):
         """

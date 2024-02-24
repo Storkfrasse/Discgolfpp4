@@ -4,6 +4,21 @@ from django.contrib.auth import login, logout
 from .forms import BookingForm, RegistrationForm
 from .models import TimeSlot, Booking
 from django.contrib.auth import authenticate
+from django.views.generic.edit import UpdateView
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
+
+
+class BookingUpdateView(UpdateView):
+    model = Booking
+    fields = ['time_slot', 'comments']
+    template_name = 'booking/edit_booking.html'
+    success_url = reverse_lazy('user_bookings')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['available_time_slots'] = TimeSlot.objects.filter(available=True)
+        return context
 
 
 def main(request):
@@ -68,6 +83,7 @@ def cancel_booking(request, booking_id):
         return redirect('user_bookings')
     return render(request, 'booking/cancel_booking.html', {'booking': booking})
 
+@login_required
 def user_bookings(request):
     user_bookings = Booking.objects.filter(user=request.user)
     return render(request, 'booking/user_bookings.html', {'user_bookings': user_bookings})

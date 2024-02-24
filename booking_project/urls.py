@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('time-slots/', views.show_time_slots, name='show_time_slots'),
     path('make-booking/', views.make_booking, name='make_booking'),
+    path('edit-booking/<int:pk>/', views.BookingUpdateView.as_view(), name= 'edit-booking'),
     path('booking-success/', views.booking_success, name='booking_success'),
     path('register/', views.register, name='register'),
     path('login/', views.user_login, name='login'), 

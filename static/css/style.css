@@ -328,13 +328,25 @@ main {
 }
 /* for booking success */
 .booking-successful {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(228, 228, 228, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    overflow-y: auto;
+    margin: 0 auto;
+    z-index: 1;
     text-align: center;
     margin-top: 100px; 
 }
 
 .booking-successful h1 {
     font-size: 4em; 
-    color: #ffffff; 
+    color: #020202; 
 }
 
 .container {
@@ -535,7 +547,7 @@ header, footer {
 
 /*media for diffrent screen sizes*/
 @media only screen and (max-width: 375px) {
-    .info-box, .booking-info-box {
+    .info-box, .booking-info-box, .booking-successful {
         width: 90%;
         max-width: none;
         padding: 10px;
