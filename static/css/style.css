@@ -280,12 +280,14 @@ figure {
 
 
 .transparent-box {
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     position: fixed;
-    top: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Change the comment box */
@@ -358,20 +360,26 @@ main {
 
 .booking-info-box {
     position: fixed;
-    top: 8%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 80%;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    overflow-y: auto; /
+    overflow-y: auto;
 }
 
 .booking-item {
     margin-bottom: 20px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
+}
+
+.booking-info-box {
+    max-height: 500px; /* Adjust the height after need */
 }
 
 .action-buttons {
@@ -541,7 +549,7 @@ header, footer {
 
 /*media for diffrent screen sizes*/
 @media only screen and (max-width: 375px) {
-    .info-box, .booking-info-box, .booking-successful {
+    .info-box, .booking-successful {
         width: 90%;
         max-width: none;
         padding: 10px;
@@ -555,12 +563,6 @@ header, footer {
         width: 90%; 
         max-height: 50%; 
         top: 50%;
-    }
-
-    .booking-info-box {
-        width: 90%;
-        max-height: 50%;
-        top: 20%;
     }
 
     .info-box h2 {
@@ -636,11 +638,6 @@ header, footer {
         top: 50%;
     }
 
-    .booking-info-box {
-        width: 90%;
-        max-height: 50%;
-        top: 20%;
-    }
 }
 
 
@@ -649,12 +646,6 @@ header, footer {
         width: 90%; 
         max-height: 50%; 
         top: 50%;
-    }
-
-    .booking-info-box {
-        width: 90%;
-        max-height: 50%;
-        top: 20%;
     }
 
 }
@@ -666,9 +657,4 @@ header, footer {
         top: 50%;
     }
 
-    .booking-info-box {
-        width: 90%;
-        max-height: 50%;
-        top: 20%;
-    }
 }
