@@ -26,7 +26,8 @@ class BookingUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['available_time_slots'] = TimeSlot.objects.filter(available=True)
+        available_time_slots = TimeSlot.objects.filter(available=True).exclude(booking__user=self.request.user)
+        context['available_time_slots'] = available_time_slots
         return context
 
 

@@ -58,9 +58,8 @@ header {
     justify-content: space-between;
     align-items: baseline;
     top: 0;
-    
-
 }
+
 
 .header-content {
     display: flex;
@@ -236,6 +235,7 @@ figure {
     box-sizing: border-box;
 }
 
+
 .login-container {
     position: absolute;
     top: 50%;
@@ -278,12 +278,6 @@ figure {
     background-color: #0056b3; /* Change the background color on hover */
 }
 
-.center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
 .transparent-box {
     background-color: rgba(255, 255, 255, 0.8); 
@@ -364,7 +358,7 @@ main {
 
 .booking-info-box {
     position: fixed;
-    top: 12%;
+    top: 8%;
     max-width: 80%;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.8);
