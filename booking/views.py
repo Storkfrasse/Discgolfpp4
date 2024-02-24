@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate
 from django.views.generic.edit import UpdateView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+from django.http import Http404
 
 
 class BookingUpdateView(UpdateView):
@@ -14,6 +15,13 @@ class BookingUpdateView(UpdateView):
     fields = ['time_slot', 'comments']
     template_name = 'booking/edit_booking.html'
     success_url = reverse_lazy('user_bookings')
+
+    # Control that the booking is the users
+    def dispatch(self, request, *args, **kwargs):
+        booking = self.get_object()
+        if booking.user != request.user:
+            raise Http404("You are not allowed to edit this booking.")
+        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -28,6 +36,7 @@ def show_time_slots(request):
     time_slots = TimeSlot.objects.all()
     return render(request, 'booking/make_booking.html', {'form': BookingForm(), 'time_slots': time_slots})
 
+@login_required
 def make_booking(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -76,6 +85,7 @@ def user_logout(request):
     logout(request)
     return redirect('main')
 
+@login_required
 def cancel_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
     if request.method == 'POST':
