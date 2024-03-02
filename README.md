@@ -73,7 +73,7 @@ Welcome to Discgolf booking <a href="https://discgolfpp4-079e1649aec0.herokuapp.
 
 ## Site Structure
 
-Discgolf Booking have several pages. The [home page](header.html) is the main page where you can read a little about the course you will book you time on. There is also a nav menu that are on all of the pages.
+Discgolf Booking have several pages. The [home page](booking/templates/booking/header.html) is the main page where you can read a little about the course you will book you time on. There is also a nav menu that are on all of the pages.
 
 
 
