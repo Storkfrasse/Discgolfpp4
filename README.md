@@ -33,7 +33,7 @@ Welcome to Discgolf booking <a href="https://discgolfpp4-079e1649aec0.herokuapp.
 
 ## User Stories
 
- ### As user I can edit my created card so that I can correct mistakes.
+ ### As user I can edit my created booking so that I can change time.
 
 	Acceptance Criteria.
 	* Edit a booked time.
@@ -54,15 +54,15 @@ Welcome to Discgolf booking <a href="https://discgolfpp4-079e1649aec0.herokuapp.
 
 	Acceptance Criteria.
 	* Able to log in.
-	*Able to log out.
+	* Able to log out.
 
 ### As user I can register an account so that I can use the site.
 
 	Acceptance Criteria.
-	*User can choose username.
-	*Email is required.
-	*A secure password.
-	*A confirmation of the users password.
+	* User can choose username.
+	* Email is required.
+	* A secure password.
+	* A confirmation of the users password.
 
 [Back to top](<#contents>)
 
