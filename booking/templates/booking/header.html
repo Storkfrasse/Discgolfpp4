@@ -12,6 +12,11 @@
 <body>
     <header id="header" class="d-flex justify-content-between align-items-center py-3 px-4">
         <a href="/" id="logo" class="header-content">Discgolf Booking</a>
+        <div class="user-info">
+            {% if user.is_authenticated %}
+                <span class="logged-in-as">Logged in as: {{ user.username }}</span>
+            {% endif %}
+        </div>
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 Menu
