@@ -71,6 +71,8 @@ def register(request):
             user = form.save()
             login(request, user)
             return redirect('make_booking')
+        else:
+            print(form.errors)
     else:
         form = RegistrationForm()
     return render(request, 'booking/register.html', {'form': form})

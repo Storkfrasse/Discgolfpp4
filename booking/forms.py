@@ -3,12 +3,18 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Booking, TimeSlot
 
+
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+        error_messages = {
+            'username': {
+                'unique': "Username already exists ."
+            }
+        }
 
 class BookingForm(forms.ModelForm):
     class Meta:
