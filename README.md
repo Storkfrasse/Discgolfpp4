@@ -3,7 +3,7 @@
 Discgolf is my big hobby and i made this site to make a booking system for players. In my hometown there is courses that don't have booking. The site is targeted at the prospective players who is looking for an chance to get a time
 on their favourit course.
 
-Welcome to Discgolf booking <a href="https://discgolfpp4-079e1649aec0.herokuapp.com/?fbclid=IwAR1GJfbjm02oFORvi6tbdNfaMUTljSiPQ__apgSMiqFWncl4CHRBNta5CI4" target="_blank" rel="noopener">Discgolf Booking</a>
+Welcome to Discgolf booking <a href="https://discgolfpp4-079e1649aec0.herokuapp.com/" target="_blank" rel="noopener">Discgolf Booking</a>
 ![Responsive](static/readme-images/responsives.jpg)
 
 
