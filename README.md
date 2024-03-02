@@ -19,6 +19,7 @@ Welcome to Discgolf booking <a href="https://discgolfpp4-079e1649aec0.herokuapp.
          * [Navigation menu](<#navigation-menu>)
          * [Register](<#register>)
          * [Footer](<#footer>)
+         * [Login Log out](<#login-log-out>)
     * [**Future Features**](<#future-features>)
 * [**Technologies Used**](<#technologies-used>)
 * [**Testing**](<#testing>)
@@ -33,36 +34,39 @@ Welcome to Discgolf booking <a href="https://discgolfpp4-079e1649aec0.herokuapp.
 
 ## User Stories
 
- ### As user I can edit my created booking so that I can change time.
-
-	Acceptance Criteria.
-	* Edit a booked time.
-	* Only the owner of the time should be able to edit it.
-
-### As user I can delete my booked time.
-
-	Acceptance Criteria.
-	* Delete a booked time.
-	* Only the owner of the time should be able to delete it.
-
-### As user I can book a time from TimeSlot.
-
-	Acceptance Criteria.
-	*Able to book a time.
-
-### As user I can log in and out so that use the site.
-
-	Acceptance Criteria.
-	* Able to log in.
-	* Able to log out.
-
-### As user I can register an account so that I can use the site.
+### As user I can register an account so that I can use the site. [[#2](https://github.com/Storkfrasse/Discgolfpp4/issues/2)]
 
 	Acceptance Criteria.
 	* User can choose username.
 	* Email is required.
 	* A secure password.
 	* A confirmation of the users password.
+
+### As user I can log in and out so that use the site. [[#3](https://github.com/Storkfrasse/Discgolfpp4/issues/3)]
+
+	Acceptance Criteria.
+	* Able to log in.
+	* Able to log out.
+
+
+### As user I can book a time from TimeSlot. [[#4](https://github.com/Storkfrasse/Discgolfpp4/issues/4)]
+
+	Acceptance Criteria.
+	*Able to book a time.
+
+### As user I can delete my booked time. [[#5](https://github.com/Storkfrasse/Discgolfpp4/issues/5)]
+
+	Acceptance Criteria.
+	* Delete a booked time.
+	* Only the owner of the time should be able to delete it.
+
+ ### As user I can edit my created booking so that I can change time. [[#6](https://github.com/Storkfrasse/Discgolfpp4/issues/6)]
+
+	Acceptance Criteria.
+	* Edit a booked time.
+	* Only the owner of the time should be able to edit it.
+
+### After second mentor meeting. I started adding issues for the user sotory.
 
 [Back to top](<#contents>)
 
@@ -119,7 +123,7 @@ I want to make it a part of my first project.
 
 
 
-* ### Login/Log out
+* ### Login Log out
 
     * located under the navigation menu.
     * Also added java script for automatic logout after 5min inactivity. 
@@ -220,9 +224,8 @@ The method for cloning a project from GitHub is below:
 4. Press **enter** and the local clone will be created.
 
 [Back to top](#contents)
+<br>
 
-
-[Back to top](<#contents>)
 
 # Credits
 ### Content
@@ -240,7 +243,7 @@ The method for cloning a project from GitHub is below:
 [Back to top](<#contents>)
 
 # Acknowledgements
-The site was completed as a Portfolio 4 Project piece for the Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such, I would like to thank my mentor [Rory Patrick Sheridan](https://www.linkedin.com/in/rp-sheridan/)
+The site was completed as a Portfolio 4 Project piece for the Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such, I would like to thank my mentor [Rory Patrick Sheridan](https://www.linkedin.com/in/rp-sheridan/).
 
 
 Michael Sjö 2023. 
